@@ -46,15 +46,15 @@ if st.session_state["authentication_status"]:
     with st.sidebar:
         selection = option_menu(
             menu_title=None,
-            options = ["Accueil","📷Photos"]
+            options = ["Accueil", "Photos"]
         )
     # Le bouton de déconnexion
         authenticator.logout("Déconnexion")
     # On indique au programme quoi faire en fonction du choix
     if selection == "Accueil":
-        st.title("Bienvenue sur la page d'accueil !")
+        st.write("Bienvenue sur la page d'accueil !")
     elif selection == "Photos":
-        st.write("Mon album photo")
+        st.write("Bienvenue sur mon album photo")
 
         col1, col2, col3 = st.columns(3)
 
@@ -78,6 +78,7 @@ elif st.session_state["authentication_status"] is False:
     st.error("L'username ou le password est/sont incorrect")
 elif st.session_state["authentication_status"] is None:
     st.warning('Les champs username et mot de passe doivent être remplie')
+  
 
 
 
